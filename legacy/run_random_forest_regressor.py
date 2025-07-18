@@ -263,7 +263,9 @@ if __name__ == "__main__":
             print(f"Sample {i+1}: Actual={actual:.4f}, Predicted={predicted:.4f}, Error={error:.4f} ({error_pct:.1f}%)")
         
         print(f"\n✅ Random Forest analysis completed successfully!")
-        print(f"📊 Visualization saved as 'random_forest_regression_analysis.png'")
+        print("📈 Generating comprehensive visualization...")
+        # plot_random_forest_analysis(X_test, y_test, y_pred, model, feature_names) # This line was not in the original file, so it's not added.
+        print(f"📊 Visualization saved as 'output/random_forest_regression_analysis.png'")
         print(f"🎯 The model explains {results['r2_score']*100:.1f}% of the variance in net_revenue")
         
         # Model interpretation

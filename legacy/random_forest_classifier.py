@@ -205,8 +205,15 @@ Classification Matrix:
     ax3.set_title('Performance Summary', fontsize=14, fontweight='bold', pad=20)
 
     plt.tight_layout()
-    plt.savefig('random_forest_analysis.png', dpi=300, bbox_inches='tight')
-    print("Visualization saved as 'random_forest_analysis.png'")
+    
+    # Ensure output directory exists
+    import os
+    os.makedirs('output', exist_ok=True)
+    
+    # Save to output directory
+    output_path = os.path.join('output', 'random_forest_analysis.png')
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"Visualization saved as '{output_path}'")
     plt.close()
 
     # Print classification report for additional details

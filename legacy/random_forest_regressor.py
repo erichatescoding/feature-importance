@@ -249,8 +249,15 @@ TOP FEATURES:
              verticalalignment='top', bbox=dict(boxstyle="round,pad=0.5", facecolor="lightblue", alpha=0.8))
 
     plt.tight_layout()
-    plt.savefig('random_forest_regression_analysis.png', dpi=300, bbox_inches='tight')
-    print("Visualization saved as 'random_forest_regression_analysis.png'")
+    
+    # Ensure output directory exists
+    import os
+    os.makedirs('output', exist_ok=True)
+    
+    # Save to output directory
+    output_path = os.path.join('output', 'random_forest_regression_analysis.png')
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"Visualization saved as '{output_path}'")
     plt.close()
 
     # ============================================================================
